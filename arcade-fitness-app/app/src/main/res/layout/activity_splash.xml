@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- Orange top accent bar -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="@color/orange_primary"
+        android:layout_gravity="top" />
+
+    <!-- Outer ring — slowest rotation -->
+    <View
+        android:id="@+id/ringOuter"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_ring_outer"
+        android:alpha="0.10" />
+
+    <!-- Middle ring — medium rotation -->
+    <View
+        android:id="@+id/ringMiddle"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_ring_outer"
+        android:alpha="0.18" />
+
+    <!-- Inner ring — fastest rotation -->
+    <View
+        android:id="@+id/ringInner"
+        android:layout_width="148dp"
+        android:layout_height="148dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_ring_outer"
+        android:alpha="0.30" />
+
+    <!-- Center content -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Logo container — dark circle with orange stroke -->
+        <FrameLayout
+            android:id="@+id/logoTile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/bg_logo_circle"
+            android:layout_marginBottom="@dimen/space_lg">
+
+            <ImageView
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_logo_hexagon"
+                android:scaleType="fitCenter"
+                android:contentDescription="Arcade Fitness logo" />
+        </FrameLayout>
+
+        <!-- App name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arcade"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:letterSpacing="-0.02"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fitness"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/orange_primary"
+            android:letterSpacing="-0.02"
+            android:gravity="center" />
+
+        <!-- Tagline -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tagline"
+            android:textSize="11sp"
+            android:textColor="@color/text_muted"
+            android:letterSpacing="0.20"
+            android:textAllCaps="true"
+            android:layout_marginTop="@dimen/space_sm"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Bottom loading indicator -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="52dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/loadingBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="160dp"
+            android:layout_height="3dp"
+            android:progressDrawable="@drawable/bg_progress_bar"
+            android:max="100"
+            android:progress="65"
+            android:indeterminate="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:textSize="10sp"
+            android:textColor="@color/text_disabled"
+            android:letterSpacing="0.10"
+            android:textAllCaps="true"
+            android:layout_marginTop="@dimen/space_sm" />
+
+    </LinearLayout>
+
+</FrameLayout>
